@@ -1,0 +1,211 @@
+{
+  "version": "1.0",
+  "name": "ByFood Search",
+  "template": "{\"type\":\"Card\",\"size\":\"sm\",\"children\":[{\"type\":\"Col\",\"gap\":2,\"children\":[{\"type\":\"Title\",\"value\":{{ (heading) | tojson }},\"size\":\"md\"},{\"type\":\"Text\",\"value\":{{ (tagline) | tojson }},\"size\":\"sm\",\"color\":\"secondary\"}]},{\"type\":\"Divider\"},{\"type\":\"Form\",\"onSubmitAction\":{\"type\":\"byfood.search\"},\"children\":[{\"type\":\"Col\",\"gap\":3,\"children\":[{\"type\":\"Input\",\"name\":\"query.location\",\"placeholder\":\"City or area\",\"defaultValue\":{{ (defaultLocation) | tojson }}},{\"type\":\"Row\",\"gap\":3,\"children\":[{\"type\":\"DatePicker\",\"name\":\"query.date\",\"defaultValue\":{{ (defaultDate) | tojson }}},{\"type\":\"Select\",\"name\":\"query.category\",\"options\":{{ (categoryOptions) | tojson }},\"defaultValue\":{{ (defaultCategory) | tojson }}}]},{\"type\":\"Row\",\"gap\":3,\"children\":[{\"type\":\"Select\",\"name\":\"query.guests\",\"options\":{{ (guestOptions) | tojson }},\"defaultValue\":{{ (defaultGuests) | tojson }}},{\"type\":\"Spacer\"},{\"type\":\"Button\",\"submit\":true,\"label\":\"Search byFood\",\"style\":\"primary\"}]}]}]}]}",
+  "jsonSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "heading": {
+        "type": "string"
+      },
+      "tagline": {
+        "type": "string"
+      },
+      "defaultDate": {
+        "type": "string"
+      },
+      "defaultLocation": {
+        "type": "string"
+      },
+      "categoryOptions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            },
+            "disabled": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "label",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "defaultCategory": {
+        "type": "string"
+      },
+      "guestOptions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            },
+            "disabled": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "label",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "defaultGuests": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "heading",
+      "tagline",
+      "defaultDate",
+      "defaultLocation",
+      "categoryOptions",
+      "defaultCategory",
+      "guestOptions",
+      "defaultGuests"
+    ],
+    "additionalProperties": false
+  },
+  "outputJsonPreview": {
+    "type": "Card",
+    "size": "sm",
+    "children": [
+      {
+        "type": "Col",
+        "gap": 2,
+        "children": [
+          {
+            "type": "Title",
+            "value": "byFood Japan",
+            "size": "md"
+          },
+          {
+            "type": "Text",
+            "value": "Find tours, classes, and dining",
+            "size": "sm",
+            "color": "secondary"
+          }
+        ]
+      },
+      {
+        "type": "Divider"
+      },
+      {
+        "type": "Form",
+        "onSubmitAction": {
+          "type": "byfood.search"
+        },
+        "children": [
+          {
+            "type": "Col",
+            "gap": 3,
+            "children": [
+              {
+                "type": "Input",
+                "name": "query.location",
+                "placeholder": "City or area",
+                "defaultValue": "Tokyo"
+              },
+              {
+                "type": "Row",
+                "gap": 3,
+                "children": [
+                  {
+                    "type": "DatePicker",
+                    "name": "query.date",
+                    "defaultValue": "2025-11-12"
+                  },
+                  {
+                    "type": "Select",
+                    "name": "query.category",
+                    "options": [
+                      {
+                        "value": "tours",
+                        "label": "Food tours"
+                      },
+                      {
+                        "value": "classes",
+                        "label": "Cooking classes"
+                      },
+                      {
+                        "value": "restaurants",
+                        "label": "Restaurants"
+                      },
+                      {
+                        "value": "tea",
+                        "label": "Tea ceremony"
+                      }
+                    ],
+                    "defaultValue": "tours"
+                  }
+                ]
+              },
+              {
+                "type": "Row",
+                "gap": 3,
+                "children": [
+                  {
+                    "type": "Select",
+                    "name": "query.guests",
+                    "options": [
+                      {
+                        "value": "1",
+                        "label": "1"
+                      },
+                      {
+                        "value": "2",
+                        "label": "2"
+                      },
+                      {
+                        "value": "3",
+                        "label": "3"
+                      },
+                      {
+                        "value": "4",
+                        "label": "4"
+                      },
+                      {
+                        "value": "5",
+                        "label": "5"
+                      },
+                      {
+                        "value": "6",
+                        "label": "6"
+                      }
+                    ],
+                    "defaultValue": "2"
+                  },
+                  {
+                    "type": "Spacer"
+                  },
+                  {
+                    "type": "Button",
+                    "submit": true,
+                    "label": "Search byFood",
+                    "style": "primary"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "encodedWidget": "eyJpZCI6ImJkYjIyMDA5LTQ4YTAtNDQzZC04MzkyLWNjZjIyZTNiNTBjZiIsIm5hbWUiOiJCeUZvb2QgU2VhcmNoIiwidmlldyI6IjxDYXJkIHNpemU9XCJzbVwiPlxuICA8Q29sIGdhcD17Mn0-XG4gICAgPFRpdGxlIHZhbHVlPXtoZWFkaW5nfSBzaXplPVwibWRcIiAvPlxuICAgIDxUZXh0IHZhbHVlPXt0YWdsaW5lfSBzaXplPVwic21cIiBjb2xvcj1cInNlY29uZGFyeVwiIC8-XG4gIDwvQ29sPlxuICA8RGl2aWRlciAvPlxuICA8Rm9ybSBvblN1Ym1pdEFjdGlvbj17eyB0eXBlOiBcImJ5Zm9vZC5zZWFyY2hcIiB9fT5cbiAgICA8Q29sIGdhcD17M30-XG4gICAgICA8SW5wdXRcbiAgICAgICAgbmFtZT1cInF1ZXJ5LmxvY2F0aW9uXCJcbiAgICAgICAgcGxhY2Vob2xkZXI9XCJDaXR5IG9yIGFyZWFcIlxuICAgICAgICBkZWZhdWx0VmFsdWU9e2RlZmF1bHRMb2NhdGlvbn1cbiAgICAgIC8-XG4gICAgICA8Um93IGdhcD17M30-XG4gICAgICAgIDxEYXRlUGlja2VyIG5hbWU9XCJxdWVyeS5kYXRlXCIgZGVmYXVsdFZhbHVlPXtkZWZhdWx0RGF0ZX0gLz5cbiAgICAgICAgPFNlbGVjdFxuICAgICAgICAgIG5hbWU9XCJxdWVyeS5jYXRlZ29yeVwiXG4gICAgICAgICAgb3B0aW9ucz17Y2F0ZWdvcnlPcHRpb25zfVxuICAgICAgICAgIGRlZmF1bHRWYWx1ZT17ZGVmYXVsdENhdGVnb3J5fVxuICAgICAgICAvPlxuICAgICAgPC9Sb3c-XG4gICAgICA8Um93IGdhcD17M30-XG4gICAgICAgIDxTZWxlY3RcbiAgICAgICAgICBuYW1lPVwicXVlcnkuZ3Vlc3RzXCJcbiAgICAgICAgICBvcHRpb25zPXtndWVzdE9wdGlvbnN9XG4gICAgICAgICAgZGVmYXVsdFZhbHVlPXtkZWZhdWx0R3Vlc3RzfVxuICAgICAgICAvPlxuICAgICAgICA8U3BhY2VyIC8-XG4gICAgICAgIDxCdXR0b24gc3VibWl0IGxhYmVsPVwiU2VhcmNoIGJ5Rm9vZFwiIHN0eWxlPVwicHJpbWFyeVwiIC8-XG4gICAgICA8L1Jvdz5cbiAgICA8L0NvbD5cbiAgPC9Gb3JtPlxuPC9DYXJkPiIsImRlZmF1bHRTdGF0ZSI6eyJoZWFkaW5nIjoiYnlGb29kIEphcGFuIiwidGFnbGluZSI6IkZpbmQgdG91cnMsIGNsYXNzZXMsIGFuZCBkaW5pbmciLCJkZWZhdWx0RGF0ZSI6IjIwMjUtMTEtMTIiLCJkZWZhdWx0TG9jYXRpb24iOiJUb2t5byIsImNhdGVnb3J5T3B0aW9ucyI6W3sidmFsdWUiOiJ0b3VycyIsImxhYmVsIjoiRm9vZCB0b3VycyJ9LHsidmFsdWUiOiJjbGFzc2VzIiwibGFiZWwiOiJDb29raW5nIGNsYXNzZXMifSx7InZhbHVlIjoicmVzdGF1cmFudHMiLCJsYWJlbCI6IlJlc3RhdXJhbnRzIn0seyJ2YWx1ZSI6InRlYSIsImxhYmVsIjoiVGVhIGNlcmVtb255In1dLCJkZWZhdWx0Q2F0ZWdvcnkiOiJ0b3VycyIsImd1ZXN0T3B0aW9ucyI6W3sidmFsdWUiOiIxIiwibGFiZWwiOiIxIn0seyJ2YWx1ZSI6IjIiLCJsYWJlbCI6IjIifSx7InZhbHVlIjoiMyIsImxhYmVsIjoiMyJ9LHsidmFsdWUiOiI0IiwibGFiZWwiOiI0In0seyJ2YWx1ZSI6IjUiLCJsYWJlbCI6IjUifSx7InZhbHVlIjoiNiIsImxhYmVsIjoiNiJ9XSwiZGVmYXVsdEd1ZXN0cyI6IjIifSwic3RhdGVzIjpbXSwic2NoZW1hIjoiaW1wb3J0IHsgeiB9IGZyb20gXCJ6b2RcIlxuXG5jb25zdCBTZWxlY3RPcHRpb24gPSB6LnN0cmljdE9iamVjdCh7XG4gIGxhYmVsOiB6LnN0cmluZygpLFxuICB2YWx1ZTogei5zdHJpbmcoKSxcbiAgZGlzYWJsZWQ6IHouYm9vbGVhbigpLm9wdGlvbmFsKCksXG59KVxuXG5jb25zdCBXaWRnZXRTdGF0ZSA9IHouc3RyaWN0T2JqZWN0KHtcbiAgaGVhZGluZzogei5zdHJpbmcoKSxcbiAgdGFnbGluZTogei5zdHJpbmcoKSxcbiAgZGVmYXVsdERhdGU6IHouc3RyaW5nKCksXG4gIGRlZmF1bHRMb2NhdGlvbjogei5zdHJpbmcoKSxcbiAgY2F0ZWdvcnlPcHRpb25zOiB6LmFycmF5KFNlbGVjdE9wdGlvbiksXG4gIGRlZmF1bHRDYXRlZ29yeTogei5zdHJpbmcoKSxcbiAgZ3Vlc3RPcHRpb25zOiB6LmFycmF5KFNlbGVjdE9wdGlvbiksXG4gIGRlZmF1bHRHdWVzdHM6IHouc3RyaW5nKCksXG59KVxuXG5leHBvcnQgZGVmYXVsdCBXaWRnZXRTdGF0ZSIsInNjaGVtYVZhbGlkaXR5IjoidmFsaWQiLCJ2aWV3VmFsaWRpdHkiOiJ2YWxpZCIsImRlZmF1bHRTdGF0ZVZhbGlkaXR5IjoidmFsaWQifQ"
+}
